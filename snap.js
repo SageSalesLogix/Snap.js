@@ -435,6 +435,9 @@
             }
         },
         init = function(opts) {
+            // Default back to the element setting if dragElement was not set
+            opts.dragElement = opts.dragElement || opts.element;
+
             if (opts.element) {
                 utils.deepExtend(settings, opts);
                 cache.vendor = utils.vendor();
